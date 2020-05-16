@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux';
 
-import todoPage from './todoPage/'
+import todoPage from './todoPage/';
 
-export default combineReducers({todoPage})
+export default combineReducers({todoPage});
