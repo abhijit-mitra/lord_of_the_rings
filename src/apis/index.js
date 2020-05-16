@@ -1,5 +1,5 @@
 import BooksApi from './books';
-import ChaptersApi from './ChaptersApi';
+import ChaptersApi from './chapters';
 
 export {
   BooksApi,

@@ -1,11 +1,13 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import ToDoPage from './components/pages/todo';
+import Home from './components/pages/';
+import Chapters from './components/pages/Chapters';
 
 const App = () => (
   <div className='w-100'>
     <main>
-      <Route exact path="/todo" component={ToDoPage} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/:bookId/chapters" component={Chapters} />
     </main>
   </div>
 );

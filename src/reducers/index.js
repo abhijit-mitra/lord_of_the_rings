@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
 
-import todoPage from './todoPage/';
+import books from './books/';
+import chapters from './chapters';
 
-export default combineReducers({todoPage});
+export default combineReducers({books, chapters});

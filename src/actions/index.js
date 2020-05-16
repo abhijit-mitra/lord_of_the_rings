@@ -1,7 +1,7 @@
-import {addTodo, updateTodo, deleteTodo} from './ToDo';
+import {getBooks, getBook, getChaptersByBookId} from './books';
 
-export{
-  addTodo,
-  updateTodo,
-  deleteTodo
-}
+export {
+  getBooks,
+  getBook,
+  getChaptersByBookId,
+};

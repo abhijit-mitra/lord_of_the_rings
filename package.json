@@ -6,7 +6,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "precommit": "eslint 'src/**/*.js' . --fix"
+    "pretest": "eslint 'src/**/*.js' . --fix"
   },
   "pre-commit": [
     "pretest"
@@ -27,8 +27,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "5.1.2",
-    "react-router": "4.4.0-beta.8",
-    "react-router-dom": "4.4.0-beta.8",
+    "react-router": "^5.1.0",
+    "react-router-dom": "^5.1.0",
     "redux": "4.0.4",
     "redux-actions": "^2.6.5",
     "redux-thunk": "2.3.0"

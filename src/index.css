@@ -15,3 +15,29 @@ button:disabled {
   opacity: 0.5;
   pointer-events: none;
 }
+
+.min-h-50v{
+  min-height: 50vh;
+}
+
+.center-x-y{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.text-white{
+  color: #fff;
+}
+
+.dark-overlay{
+  background-color: rgba(0,0,0,0.5);
+}
+
+.light-overlay{
+  background-color: rgba(255,255,255,0.5);
+}
