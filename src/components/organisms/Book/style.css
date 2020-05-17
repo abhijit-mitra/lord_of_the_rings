@@ -1,4 +1,4 @@
-.book:hover{
-  color:#fff!important;
-  background-color: rgba(0,0,0,0.4)!important;
+.book:hover .name{
+  color: #fff!important;
+  background-color: #113dbc!important
 }

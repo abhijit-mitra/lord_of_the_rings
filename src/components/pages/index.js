@@ -1,32 +1,38 @@
-import React, {useEffect} from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
+import React, {memo} from 'react';
+import {useHistory} from 'react-router-dom';
 
-import {getBooks} from '../../actions/';
-import {Books} from '../templates';
+import {Container} from '../organisms';
 
-const Home = ({getBooks, books}) => {
-  useEffect(()=>{
-    getBooks();
-  }, [getBooks]);
-  const {isFetching, error, data} = books;
+const CardStyle={
+  'height': '400px',
+};
+
+const Home = memo(() => {
+  const history = useHistory();
+  const handleBooksClick = ()=>{
+    history.push('/books');
+  };
+  const handleMoviesClick = ()=>{
+    history.push('/movies');
+  };
   return (
-    <div className="p-5">
-      <div className="row">
-        <div className="col-md-10 offset-md-1 min-h-50v w-100">
-          <Books isFetching={isFetching} error={error} data={(data && data.docs) || []}/>
+    <>
+      <Container>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="border-blue br-10 center-x-y cursor-pointer font-24 bold text-blue" style={CardStyle} onClick={handleBooksClick}>
+              Books
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="border-blue br-10 center-x-y cursor-pointer font-24 bold text-blue" style={CardStyle} onClick={handleMoviesClick}>
+              Movies
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </Container>
+    </>
   );
-};
-
-Home.propTypes={
-  getBooks: PropTypes.func.isRequired,
-  books: PropTypes.object.isRequired,
-};
-
-const mapStateToProps=({books})=>({
-  books,
 });
-export default connect(mapStateToProps, {getBooks})(Home);
+
+export default Home;

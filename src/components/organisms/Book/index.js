@@ -7,7 +7,7 @@ import bookLogo from './lotr.jpg';
 import './style.css';
 
 const BookStyle={
-  height: '400px',
+  height: '200px',
 };
 
 const Book = ({name, id}) => {
@@ -17,15 +17,13 @@ const Book = ({name, id}) => {
   }
   return (
     <div className='col-md-4 mb-4'>
-      <div className="border cursor-pointer w-100 position-relative"
-        style={BookStyle} onClick={handleClick}>
-        <div className="position-absolute w-100 h-100">
+      <div className="book cursor-pointer w-100 position-relative border-blue overflow-hidden br-10"
+        onClick={handleClick}>
+        <div className="position-relative w-100 p-2" style={BookStyle}>
           <Img src={bookLogo}/>
         </div>
-        <div className="book position-relative d-flex align-items-center justify-content-center w-100 h-100 px-5 light-overlay">
-          <h3 className="position-relative text-center">
-            {name}
-          </h3>
+        <div className="name position-relative d-flex align-items-center justify-content-center w-100 h-100 p-3 text-blue bold">
+          {name}
         </div>
       </div>
     </div>

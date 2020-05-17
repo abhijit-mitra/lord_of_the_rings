@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import {getChaptersByBookId} from '../../../actions';
 import {Chapters as ChaptersTemplate} from '../../templates';
+import {Container} from '../../organisms';
 
 
 const Chapters = memo(({match, getChaptersByBookId, chapters}) => {
@@ -13,13 +14,11 @@ const Chapters = memo(({match, getChaptersByBookId, chapters}) => {
   }, [bookId, getChaptersByBookId]);
   const {isFetching, error, data} = chapters;
   return (
-    <div className="p-5">
-      <div className="row">
-        <div className="col-md-10 offset-md-1 min-h-50v w-100">
-          <ChaptersTemplate isFetching={isFetching} error={error} data={(data && data.docs) || []}/>
-        </div>
-      </div>
-    </div>
+    <>
+      <Container>
+        <ChaptersTemplate isFetching={isFetching} error={error} data={(data && data.docs) || []}/>
+      </Container>
+    </>
   );
 });
 

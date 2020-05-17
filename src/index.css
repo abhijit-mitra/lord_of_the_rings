@@ -16,8 +16,8 @@ button:disabled {
   pointer-events: none;
 }
 
-.min-h-50v{
-  min-height: 50vh;
+.min-h-70v{
+  min-height: 70vh;
 }
 
 .center-x-y{
@@ -40,4 +40,28 @@ button:disabled {
 
 .light-overlay{
   background-color: rgba(255,255,255,0.5);
+}
+
+.bg-blue {
+    background-color: #113dbc;
+}
+
+.text-blue{
+  color: #113dbc;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.font-24{
+  font-size: 24px;
+}
+
+.border-blue{
+  border: 1px solid #113dbc;
+}
+
+.br-10{
+  border-radius: 10px;
 }

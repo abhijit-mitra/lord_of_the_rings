@@ -12,17 +12,6 @@ export default class BooksApi {
       headers,
     });
   };
-  static getBook= async (bookId)=>{
-    const url = `${API_BASE_URL}book/${bookId}`;
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer LehmJbQtyzC7JLiN7S2A',
-    };
-    return fetch(url, {
-      method: 'GET',
-      headers,
-    });
-  };
   static getChaptersByBookId= async (bookId)=>{
     const url = `${API_BASE_URL}book/${bookId}/chapter`;
     const headers = {

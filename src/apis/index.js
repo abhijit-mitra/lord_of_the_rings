@@ -1,7 +1,7 @@
 import BooksApi from './books';
-import ChaptersApi from './chapters';
+import MoviesApi from './movies';
 
 export {
   BooksApi,
-  ChaptersApi,
+  MoviesApi,
 };

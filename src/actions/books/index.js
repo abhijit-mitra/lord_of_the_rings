@@ -15,20 +15,7 @@ export const getBooks = ()=> async (dispatch)=>{
     const res_json = await res.json();
     dispatch({type: `${GET_BOOKS}_success`, payload: res_json});
   } catch (err) {
-    dispatch({type: `${GET_BOOKS}_success`, payload: err});
-  }
-};
-
-
-export const getBook = (bookId)=> async (dispatch)=>{
-  const {GET_BOOK} = booksActionTypes;
-  dispatch({type: `${GET_BOOK}_started`});
-  try {
-    const res = await BooksApi.getBook(bookId);
-    const res_json = await res.json();
-    dispatch({type: `${GET_BOOK}_success`, payload: res_json});
-  } catch (err) {
-    dispatch({type: `${GET_BOOK}_success`, payload: err});
+    dispatch({type: `${GET_BOOKS}_failed`, payload: err});
   }
 };
 
@@ -37,9 +24,15 @@ export const getChaptersByBookId = (bookId)=> async (dispatch)=>{
   dispatch({type: `${GET_CHAPTERS_BY_BOOK_ID}_started`});
   try {
     const res = await BooksApi.getChaptersByBookId(bookId);
+    if (res.status !== 200) {
+      const error = {
+        message: `Sorry, something went wrong !`,
+      };
+      throw error;
+    }
     const res_json = await res.json();
     dispatch({type: `${GET_CHAPTERS_BY_BOOK_ID}_success`, payload: res_json});
   } catch (err) {
-    dispatch({type: `${GET_CHAPTERS_BY_BOOK_ID}_success`, payload: err});
+    dispatch({type: `${GET_CHAPTERS_BY_BOOK_ID}_failed`, payload: err});
   }
 };
