@@ -19,22 +19,20 @@ const Movies = memo(({getMovies, movies}) => {
   const {isFetching, error, data} = movies;
   const options = (data && data.docs) || [];
   return (
-    <>
-      <Container>
-        <>
-          <div className="w-100 mb-5">
-            <Search
-              options = {options}
-              searchBy={
-                ['name', 'runtimeInMinutes', 'budgetInMillions', 'boxOfficeRevenueInMillions', 'academyAwardNominations', 'academyAwardWins']}
-              placeholder='Search here...'
-              onSearch = {handleSearch}
-            />
-          </div>
-          <MoviesTemplate isFetching={isFetching} error={error} data={isEmpty(searchResult)?options:searchResult}/>
-        </>
-      </Container>
-    </>
+    <Container>
+      <>
+        <div className="w-100 mb-5">
+          <Search
+            options = {options}
+            searchBy={
+              ['name', 'runtimeInMinutes', 'budgetInMillions', 'boxOfficeRevenueInMillions', 'academyAwardNominations', 'academyAwardWins']}
+            placeholder='Search here...'
+            onSearch = {handleSearch}
+          />
+        </div>
+        <MoviesTemplate isFetching={isFetching} error={error} data={isEmpty(searchResult)?options:searchResult}/>
+      </>
+    </Container>
   );
 });
 

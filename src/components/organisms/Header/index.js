@@ -7,12 +7,12 @@ import './style.css';
 
 const quickLinks = [{
   id: 1,
-  title: 'Books',
-  route: '/books',
-}, {
-  id: 2,
   title: 'Movies',
   route: '/movies',
+}, {
+  id: 2,
+  title: 'Books',
+  route: '/books',
 }];
 
 const Style={
