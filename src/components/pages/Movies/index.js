@@ -43,9 +43,9 @@ const Movies = memo(({getMovies, movies}) => {
     setSearchResult(data);
   };
   const handleSelect = (data)=>{
-    let all_movies = [...movies.data.docs];
+    let all_movies = isEmpty(searchResult)?[...movies.data.docs]:[...searchResult];
     all_movies = all_movies.sort((a, b)=>(a[data.value]-b[data.value]));
-    setSearchResult([...all_movies]);
+    setSearchResult(all_movies);
   };
   const {isFetching, error, data} = movies;
   const options = (data && data.docs) || [];
