@@ -31,12 +31,14 @@ const Header = () => {
       <div className="row">
         <div className="col-md-10 offset-md-1 text-white">
           <div className="row">
-            <div className="col-2 cursor-pointer" onClick={handleClick('/')}>
-              <Img src={logo}/>
+            <div className="col-md-2 col-4 cursor-pointer" onClick={handleClick('/')}>
+              <div className="w-100 px-2">
+                <Img src={logo}/>
+              </div>
             </div>
             {
               quickLinks.map((elm)=>(
-                <div className="col-2 center-x-y border quickLinks cursor-pointer" key={elm.id} onClick={handleClick(elm.route)}>
+                <div className="col-md-2 col-4 center-x-y quickLinks cursor-pointer font-16" key={elm.id} onClick={handleClick(elm.route)}>
                   {elm.title}
                 </div>))
             }
